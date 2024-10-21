@@ -1,0 +1,141 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="Бульбулятор" MinWidth="430" MinHeight="660" WindowStartupLocation="CenterOwner" KeyDown="Window_KeyDown" Width="269" Height="701" WindowState="Minimized" ResizeMode="NoResize">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White"/>
+
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel Width="430" HorizontalAlignment="Center" VerticalAlignment="Center" Height="759">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF86C2FF"/>
+                    <GradientStop Color="#FFCDA8F6" Offset="1"/>
+                    <GradientStop Color="#FFCCB8E8" Offset="0.957"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Grid Width="406" Height="754">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Margin="0,0,0,100" HorizontalAlignment="Center" Width="406">
+                    <TextBlock PreviewKeyDown="table_PreviewKeyDown" x:Name="table" Margin="42,49,38,524" FontSize="36" FontWeight="Bold" Foreground="Black" TextWrapping="NoWrap" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+                </ScrollViewer>
+                <Button Click="print_num" x:Name="one_butt" Content="1" Height="79" Width="78" Margin="42,130,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFDDDDDD" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="print_num" x:Name="two_butt" Content="2" Height="79" Width="78" Margin="125,130,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="print_num" x:Name="tree_butt" Content="3" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="207,130,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="print_num" x:Name="four_butt" Content="4" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,213,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="print_num" x:Name="five_butt" Content="5" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,213,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="print_num" x:Name="six_butt" Content="6" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="207,213,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="print_num" x:Name="seven_butt" Content="7" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,297,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="print_num" x:Name="eight_butt" Content="8" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,297,0,0" RenderTransformOrigin="0.5,0.5" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="White" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="print_num" x:Name="nine_butt" Content="9" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="207,297,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="print_num" x:Name="own_butt" Content="0" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,381,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="White" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="print_oper" x:Name="plus_butt" Content="+" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,130,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="print_oper" x:Name="minus_butt" Content="-" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,213,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="print_oper" x:Name="multy_butt" Content="*" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,297,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="print_oper" x:Name="del_butt" Content="/" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,381,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="print_oper" x:Name="percent_butt" Content="%" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="207,381,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="kor_butt_Click" x:Name="kor_butt" Content="√" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,381,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="ravno_butt_Click" x:Name="ravno_butt" Content="=" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,465,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black" RenderTransformOrigin="0.5,0.5">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="remove_butt_Click" x:Name="remove_butt" Content="&lt;-" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,465,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="CA_butt_Click" x:Name="CA_butt" Content="CA" Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="207,465,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="comma_butt" Click="comma_butt_Click" Content="," Height="79" Width="78" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,464,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black" RenderTransformOrigin="0.5,0.5">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="change_sign_butt_Click" x:Name="change_sign_butt" Content="+/-" Height="79" Width="165" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="207,549,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black" RenderTransformOrigin="0.5,0.5">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+                <Button  x:Name="history" Content="Hist" Height="79" Width="165" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,549,0,0" FontSize="36" FontWeight="Bold" BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Click="history_Click">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFFAFAFA" Opacity="0.01"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
